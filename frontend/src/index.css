@@ -45,3 +45,7 @@ main {
   color: black;
   border-color: #f0c040;
 }
+
+.img-large {
+  max-width: 100%;
+}
