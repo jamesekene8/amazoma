@@ -4,6 +4,8 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Product from "../components/Product";
 import { Helmet } from "react-helmet-async";
+import LoadingBox from "../components/LoadingBox";
+import MessageBox from "../components/MessageBox";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -39,11 +41,11 @@ const HomeScreen = () => {
   }, []);
 
   if (loading) {
-    return <p>Loading....</p>;
+    return <LoadingBox />;
   }
 
   if (error) {
-    return <p>{error}</p>;
+    return <MessageBox variant="danger">{error}</MessageBox>;
   }
 
   return (
