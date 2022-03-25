@@ -6,13 +6,16 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { HelmetProvider } from "react-helmet-async";
+import { StoreProvider } from "./Store";
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <HelmetProvider>
-        <App />
-      </HelmetProvider>
+      <StoreProvider>
+        <HelmetProvider>
+          <App />
+        </HelmetProvider>
+      </StoreProvider>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
