@@ -13,6 +13,9 @@ const initialState = {
     cartItems: localStorage.getItem("cartItems")
       ? JSON.parse(localStorage.getItem("cartItems"))
       : [],
+    paymentMethod: localStorage.getItem("paymentMethod")
+      ? JSON.parse(localStorage.getItem("paymentMethod"))
+      : [],
   },
 };
 
@@ -49,7 +52,7 @@ const reducer = (state, action) => {
       return {
         ...state,
         userInfo: null,
-        cart: { cartItems: [], shippingAddress: {} },
+        cart: { cartItems: [], shippingAddress: {}, paymentMethod: "" },
       };
 
     case "SAVE_SHIPPING_ADDRESS":
@@ -57,6 +60,9 @@ const reducer = (state, action) => {
         ...state,
         cart: { ...state.cart, shippingAddress: action.payload },
       };
+
+    case "SAVE_PAYMENT_METHOD":
+      return { ...state, cart: { ...state.cart, payload: action.payload } };
 
     default:
       return state;
