@@ -7,13 +7,16 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { HelmetProvider } from "react-helmet-async";
 import { StoreProvider } from "./Store";
+import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <StoreProvider>
         <HelmetProvider>
-          <App />
+          <PayPalScriptProvider deferLoading={true}>
+            <App />
+          </PayPalScriptProvider>
         </HelmetProvider>
       </StoreProvider>
     </BrowserRouter>
