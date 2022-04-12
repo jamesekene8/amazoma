@@ -40,7 +40,8 @@ main {
   color: #ffc000;
 }
 
-.btn-primary {
+.btn-primary,
+.btn-outline-primary {
   background-color: #f0c040;
   color: black;
   border-color: #f0c040;
@@ -70,4 +71,29 @@ main {
 
 .icon-spinner {
   margin: 0 auto;
+}
+
+.navbar-brand {
+  font-weight: bold;
+}
+
+.side-navbar {
+  width: 240px;
+  height: 100%;
+  position: absolute;
+  left: -300px;
+  background-color: #100901;
+  transition: 0.5s;
+}
+
+.site-container {
+  transition: 0.4s;
+}
+
+.active-cont {
+  margin-left: 240px;
+}
+
+.active-nav {
+  left: 0;
 }
